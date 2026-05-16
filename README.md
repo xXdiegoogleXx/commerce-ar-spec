@@ -35,6 +35,23 @@ Este proyecto usa **3 repositorios sincronizados**:
 | `commerce-ar-backend` | Backend del proyecto |
 | `commerce-ar-frontend` | Frontend del proyecto |
 
+## Convenciones de Base de Datos
+
+**IMPORTANTE:** Todas las columnas en la base de datos deben estar en **inglés**.
+
+- Nombres de tablas: singular, PascalCase (ej: `User`, `Product`)
+- Nombres de columnas: snake_case inglés (ej: `document_number`, `birth_date`, `phone`)
+- Enums: Nombre en inglés con valores en español si es necesario (ej: `Gender` con valores `masculino`, `femenino`, `otros`)
+- Relaciones: Usar `<tabla>_id` (ej: `userId` → `user_id` en DB)
+
+En Prisma, usar `@map()` para mapear nombres de propiedad TypeScript a nombres de columna en inglés:
+```prisma
+documentNumber String? @map("document_number")
+phone String? @map("phone")
+birthDate DateTime? @map("birth_date")
+gender Gender? @map("gender")
+```
+
 ## Sincronización
 
 Cuando se archiva un change en `commerce-ar-spec`, es necesario sincronizar a los otros repositorios.

@@ -2,6 +2,13 @@
 
 Este documento describe el proceso para sincronizar los specs archivados entre los 3 repositorios del proyecto.
 
+## Convenciones de Base de Datos
+
+**IMPORTANTE:** Todas las columnas en la base de datos deben estar en **inglés**.
+
+- Nombres de columnas: snake_case inglés (ej: `document_number`, `birth_date`, `phone`)
+- En Prisma usar `@map()` para mapear nombres de propiedad TypeScript a nombres de columna en inglés
+
 ## Arquitectura de Repositorios
 
 ```
