@@ -1,5 +1,9 @@
 schema: spec-driven
 
+# Idioma del proyecto
+# Todos los artefactos (proposal, design, tasks, specs) se generan en español
+language: es
+
 # Project context (optional)
 # This is shown to AI when creating artifacts.
 # Add your tech stack, conventions, style guides, domain knowledge, etc.
@@ -11,10 +15,22 @@ schema: spec-driven
 
 # Per-artifact rules (optional)
 # Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always include a "Non-goals" section
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+rules:
+  proposal:
+    - Escribir siempre en español
+    - Usar encabezados en español (## Por qué, ## Qué cambia, ## Capabilities, ## Impacto)
+    - Mantener propuestas concisas (1-2 páginas)
+  
+  design:
+    - Escribir siempre en español
+    - Usar encabezados en español (## Contexto, ## Objetivos, ## Decisiones, ## Riesgos)
+  
+  tasks:
+    - Escribir siempre en español
+    - Usar formato de checkboxes (- [ ] para pending, - [x] para completo)
+    - Agrupar tareas lógicamente
+  
+  specs:
+    - Escribir siempre en español
+    - Usar SHALL/MUST para requisitos normativos
+    - Escenarios con formato WHEN/THEN
